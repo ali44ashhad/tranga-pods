@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-scroll';
-import { FaFacebook, FaInstagram } from 'react-icons/fa'; // ✨ IMPORT ICONS
+import { Link } from 'react-scroll'; 
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -14,26 +14,39 @@ const Footer = () => {
             </a>
             
             {/* ✨ ADDED THIS SECTION FOR SOCIAL ICONS */}
-            <div className="pl-3 flex items-center gap-4 mt-4">
-              <a 
-                href="https://www.facebook.com/people/Tranga-Pods/61581808216740/#" // Dummy link
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-              >
-                <FaFacebook size={24} />
-              </a>
-              <a 
-                href="https://www.instagram.com/trangapods/#" // Dummy link
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-              >
-                <FaInstagram size={24} />
-              </a>
-            </div>
+           <div className="pl-3 flex items-center gap-4 mt-4">
+  <a 
+    href="https://www.facebook.com/people/Tranga-Pods/61581808216740/#"
+    target="_blank" 
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+    className="text-gray-400 hover:text-white transition-colors duration-200"
+  >
+    <FaFacebook size={24} />
+  </a>
+
+  <a 
+    href="https://www.instagram.com/trangapods/#"
+    target="_blank" 
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+    className="text-gray-400 hover:text-white transition-colors duration-200"
+  >
+    <FaInstagram size={24} />
+  </a>
+
+  {/* 🌐 NEW LINKEDIN BUTTON */}
+  <a 
+    href="https://www.linkedin.com/company/trangapods/"
+    target="_blank" 
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+    className="text-gray-400 hover:text-white transition-colors duration-200"
+  >
+    <FaLinkedin size={24} />
+  </a>
+</div>
+
             {/* ✨ END OF ADDED SECTION */}
 
           </div>
