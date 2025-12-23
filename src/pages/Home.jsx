@@ -9,12 +9,13 @@ import Contact from '../components/Contact';
 import { Title, Meta, Link } from "react-head";
 import ProductShowcase from '../components/ProductShowcase';
 import Footer from '../components/Footer';
-import BlinkingStars from '../components/BlinkingStars';
+import BlinkingStars from '../components/BlinkingStars'; 
 
 const Home = () => {
   return (
+    
     <div className='bg-gradient-to-br from-teal-100 via-blue-100 to-violet-200' >
-      
+    <Navigation/>
       <Hero />
 
       {/* --- First Gradient Section --- */}
@@ -35,7 +36,7 @@ const Home = () => {
         <div id="about-us" className=''><AboutUs /></div>
       </div>
         <div id="contact"><Contact /></div>
-        {/* <Footer></Footer> */}
+        <Footer></Footer>
     </div>
   );
 };

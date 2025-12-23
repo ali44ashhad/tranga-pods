@@ -111,3 +111,52 @@
       0 0 200px rgba(255, 240, 245, 0.4);
   }
 }
+
+/* styles/globals.css */
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-dark: #14132C;      /* Dark Blue */
+  --primary-light: #A6D4FA;     /* Light Blue */
+  --accent-burnt: #FF9178;      /* Burnt Orange */
+  --accent-yellow: #FFFD3A;     /* Electric Yellow */
+  --neutral-white: #FFFFFF;
+  --neutral-gray: #F9FAFB;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-white text-[#14132C];
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-light tracking-tight;
+  }
+}
+
+/* Custom animations */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 60s linear infinite;
+}
+
+/* Smooth scroll link styles */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
