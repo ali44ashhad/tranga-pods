@@ -40,7 +40,7 @@ export default function Home() {
       <Footer />
       
       {/* Back to Top Button */}
-      <motion.button
+      {/* <motion.button
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         whileHover={{ scale: 1.1 }}
@@ -49,7 +49,7 @@ export default function Home() {
         className="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-gradient-to-br from-[#FF9178] to-[#FFFD3A] flex items-center justify-center shadow-lg z-40"
       >
         <span className="text-[#14132C] font-bold">↑</span>
-      </motion.button>
+      </motion.button> */}
     </div>
   );
 }
