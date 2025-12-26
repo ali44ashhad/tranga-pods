@@ -6,6 +6,7 @@ import Process from '../components/Process';
 import WhyTranga from '../components/WhyTranga';
 import AboutUs from '../components/AboutUs';
 import Contact from '../components/Contact';
+import PartnersSection from '../components/PartnersSection';
 import { Title, Meta, Link } from "react-head";
 import ProductShowcase from '../components/ProductShowcase';
 import Footer from '../components/Footer';
@@ -36,6 +37,7 @@ const Home = () => {
         <div id="about-us" className=''><AboutUs /></div>
       </div>
         <div id="contact"><Contact /></div>
+        <div id="partners"><PartnersSection /></div>
         <Footer></Footer>
     </div>
   );
