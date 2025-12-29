@@ -151,7 +151,7 @@ const HelpRefunds = () => {
 
           <a
             href="mailto:support@trangapods.com"
-            className="text-[#A6D4FA] text-xl block"
+            className="text-[#A6D4FA] text-md md:text-xl block"
           >
             support@trangapods.com
           </a>
