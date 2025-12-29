@@ -348,3 +348,166 @@ const FindPod = () => {
 };
 
 export default FindPod;
+
+
+// import React, { useState } from 'react';
+// import { MapPin, Search, AlertCircle } from 'lucide-react';
+
+// const FindPod = () => {
+//   const [zipCode, setZipCode] = useState('');
+//   const [searchResults, setSearchResults] = useState([]);
+//   const [showNoResults, setShowNoResults] = useState(false);
+
+//   // Mock data for demonstration
+//   const mockLocations = [
+//     {
+//       id: 1,
+//       name: "Downtown Business Center",
+//       address: "123 Main St, Suite 100",
+//       city: "Atlanta",
+//       state: "GA",
+//       type: "Office Building",
+//       access: "Lobby - Public Hours"
+//     },
+//     {
+//       id: 2,
+//       name: "University Student Union",
+//       address: "456 Campus Drive",
+//       city: "Atlanta",
+//       state: "GA",
+//       type: "Campus Location",
+//       access: "Student ID Required"
+//     }
+//   ];
+
+//   const handleSearch = (e) => {
+//     e.preventDefault();
+//     if (zipCode.length === 5) {
+//       // Simulate API call
+//       setSearchResults(mockLocations);
+//       setShowNoResults(mockLocations.length === 0);
+//     }
+//   };
+
+//   return (
+//     <section id="find-pod" className="py-16 bg-gray-50">
+//       <div className="max-w-4xl mx-auto px-4">
+//         <div className="text-center mb-10">
+//           <h2 className="text-3xl font-light text-gray-900 mb-4">
+//             Find a Tranga Pod
+//           </h2>
+//           <p className="text-gray-600 max-w-2xl mx-auto">
+//             Tranga Pods are placed in convenient locations to provide access when you need it. 
+//             Search by ZIP code to find nearby machines.
+//           </p>
+//         </div>
+
+//         <div className="max-w-md mx-auto mb-12">
+//           <form onSubmit={handleSearch} className="mb-8">
+//             <div className="flex gap-2">
+//               <div className="flex-1 relative">
+//                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+//                 <input
+//                   type="text"
+//                   pattern="[0-9]{5}"
+//                   maxLength="5"
+//                   placeholder="Enter 5-digit ZIP code"
+//                   value={zipCode}
+//                   onChange={(e) => setZipCode(e.target.value.replace(/\D/g, ''))}
+//                   className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all"
+//                 />
+//               </div>
+//               <button
+//                 type="submit"
+//                 className="px-6 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
+//               >
+//                 Search
+//               </button>
+//             </div>
+//             <p className="text-sm text-gray-500 mt-2">
+//               Enter a valid 5-digit US ZIP code
+//             </p>
+//           </form>
+
+//           {searchResults.length > 0 && (
+//             <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+//               <div className="p-4 border-b border-gray-200">
+//                 <h3 className="font-medium text-gray-900">
+//                   Nearby Locations ({searchResults.length})
+//                 </h3>
+//               </div>
+//               <div className="divide-y divide-gray-100">
+//                 {searchResults.map((location) => (
+//                   <div key={location.id} className="p-4 hover:bg-gray-50">
+//                     <div className="flex items-start gap-3">
+//                       <MapPin className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+//                       <div>
+//                         <h4 className="font-medium text-gray-900 mb-1">
+//                           {location.name}
+//                         </h4>
+//                         <p className="text-sm text-gray-600 mb-2">
+//                           {location.address}, {location.city}, {location.state}
+//                         </p>
+//                         <div className="flex flex-wrap gap-2">
+//                           <span className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded">
+//                             {location.type}
+//                           </span>
+//                           <span className="text-xs px-2 py-1 bg-blue-50 text-blue-700 rounded">
+//                             {location.access}
+//                           </span>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 ))}
+//               </div>
+//             </div>
+//           )}
+
+//           {showNoResults && (
+//             <div className="text-center p-8 bg-white rounded-lg border border-gray-200">
+//               <AlertCircle className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+//               <h3 className="text-lg font-medium text-gray-900 mb-2">
+//                 No Tranga Pods Found
+//               </h3>
+//               <p className="text-gray-600 mb-6">
+//                 There are currently no Tranga Pods in this area. 
+//                 New locations are added based on community needs.
+//               </p>
+//               <p className="text-sm text-gray-500">
+//                 You can learn about where Tranga Pods are typically located in our Safety section.
+//               </p>
+//             </div>
+//           )}
+//         </div>
+
+//         <div className="bg-white p-6 rounded-lg border border-gray-200">
+//           <h3 className="font-medium text-gray-900 mb-4">
+//             Where You Might Find Tranga Pods
+//           </h3>
+//           <div className="grid md:grid-cols-2 gap-4">
+//             <div>
+//               <h4 className="text-sm font-medium text-gray-700 mb-2">Common Locations:</h4>
+//               <ul className="space-y-1 text-sm text-gray-600">
+//                 <li>• Office building lobbies</li>
+//                 <li>• University campuses</li>
+//                 <li>• Apartment complexes</li>
+//                 <li>• Business centers</li>
+//               </ul>
+//             </div>
+//             <div>
+//               <h4 className="text-sm font-medium text-gray-700 mb-2">Access Information:</h4>
+//               <ul className="space-y-1 text-sm text-gray-600">
+//                 <li>• Some locations require building access</li>
+//                 <li>• Hours may vary by location</li>
+//                 <li>• Machines are clearly marked</li>
+//               </ul>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default FindPod;

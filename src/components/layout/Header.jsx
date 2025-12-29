@@ -152,6 +152,7 @@ const Header = () => {
     { label: "Learn", href: "about" },
     { label: "Find a Pod", href: "find-pod" },
     { label: "Support", href: "support" },
+    { label: "FAQ", href: "FAQ" },
   ];
 
   return (
