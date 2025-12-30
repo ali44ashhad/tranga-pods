@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-scroll";
 import { Instagram, Mail } from "lucide-react";
-import logo from "../../../public/logo.png";
+
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -15,13 +16,17 @@ const Footer = () => {
               {/* <img src={logo} alt="Tranga Pods Logo" className="h-10" /> */}
               <img src="footerLogo.png" alt="Tranga Pods Logo" className="h-10" />
             </a>
-
-            <p className="mt-4 text-sm text-gray-400">
-              Bringing fragrance and convenience to the places you already love.
-            </p>
-
             {/* Social Icons */}
-            <div className="flex items-center gap-4 mt-5">
+            <div className="flex items-center gap-4 mt-2">
+               <a 
+                  href="https://www.facebook.com/people/Tranga-Pods/61581808216740/#"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  <FaFacebook size={24} />
+                </a>
               <a
                 href="https://instagram.com/TrangaPods"
                 target="_blank"
@@ -32,13 +37,16 @@ const Footer = () => {
                 <Instagram size={22} />
               </a>
 
-              <a
-                href="mailto:support@trangapods.com"
-                aria-label="Email"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Mail size={22} />
-              </a>
+             
+               <a 
+                  href="https://www.linkedin.com/company/trangapods/"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  <FaLinkedin size={24} />
+                </a>
             </div>
           </div>
 
@@ -81,7 +89,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800 text-center">
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Tranga Pods. All rights reserved.
+            © {new Date().getFullYear()} Tranga LLC d/b/a Tranga Pods. All rights reserved.
           </p>
         </div>
       </div>

@@ -99,7 +99,7 @@ const WhatsNew = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-         className="text-[1.3rem] text-center sm:text-[1.7rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[2.8rem] 2xl:text-[3.2rem]"
+         className="text-[1.3rem] font-extrabold pb-8 text-center sm:text-[1.7rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[2.8rem] 2xl:text-[3.2rem]"
                 style={{ color: '#FF9178' }}
         >
           Latest launches, real stories, and what’s trending inside Tranga Pods.

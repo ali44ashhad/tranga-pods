@@ -1,273 +1,3 @@
-// // components/sections/HelpRefunds.jsx
-// import React, { useState } from "react";
-// import { motion } from "framer-motion";
-// import {
-//   Mail,
-//   AlertCircle,
-//   Info,
-//   ChevronDown,
-//   ChevronUp,
-// } from "lucide-react";
-
-// const HelpRefunds = () => {
-//   const [openFaq, setOpenFaq] = useState(null);
-
-//   // 👉 Cursor glow state (ONLY for Get Help & Support section)
-//   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
-
-//   const handleMouseMove = (e) => {
-//     const { left, top } = e.currentTarget.getBoundingClientRect();
-//     setCursorPos({
-//       x: e.clientX - left,
-//       y: e.clientY - top,
-//     });
-//   };
-
-//   const faqs = [
-//     {
-//       question: "I was charged but didn't receive my product",
-//       answer:
-//         "Please contact support with the pod location and transaction details. We'll review the machine logs and process a refund if applicable.",
-//     },
-//     {
-//       question: "I received the wrong item",
-//       answer:
-//         "This can happen if a product mis-dispenses. Contact our team with transaction details and we'll review the issue immediately.",
-//     },
-//     {
-//       question: "Can I return a product?",
-//       answer:
-//         "Due to hygiene and safety standards, physical returns are not accepted. Refunds are handled case by case based on transaction verification.",
-//     },
-//     {
-//       question: "How do I know if my refund was approved?",
-//       answer:
-//         "Our team will notify you by email once the review is complete. Refunds typically appear in your account within 3–5 business days.",
-//     },
-//     {
-//       question: "The machine appears offline or isn't working",
-//       answer:
-//         "Please try another nearby location. All pods are monitored and serviced regularly. You can also report the issue to support.",
-//     },
-//   ];
-
-//   const containerVariants = {
-//     hidden: { opacity: 0 },
-//     visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
-//   };
-
-//   const itemVariants = {
-//     hidden: { y: 20, opacity: 0 },
-//     visible: { y: 0, opacity: 1 },
-//   };
-
-//   return (
-//     <div className="w-full">
-//       {/* ================= GET HELP & SUPPORT (WITH CURSOR GLOW) ================= */}
-//       <section
-//         id="support"
-//         onMouseMove={handleMouseMove}
-//         className="relative overflow-hidden py-24 bg-[#14132C] text-white"
-//       >
-//         {/* ✨ Cursor-follow glow */}
-//         <motion.div
-//           className="absolute inset-0 pointer-events-none"
-//           style={{
-//             background: `radial-gradient(
-//               320px circle at ${cursorPos.x}px ${cursorPos.y}px,
-//               rgba(255,145,120,0.18),
-//               transparent 75%
-//             )`,
-//             transition: "background 0.1s ease-out",
-//           }}
-//         />
-
-//         <motion.div
-//           variants={containerVariants}
-//           initial="hidden"
-//           whileInView="visible"
-//           viewport={{ once: true }}
-//           className="relative max-w-4xl mx-auto px-4 space-y-16"
-//         >
-//           {/* HEADER */}
-//           <div className="text-center">
-            
- 
-//                 <motion.div
-//         className="relative max-w-4xl mx-auto text-center"
-//         initial={{ opacity: 0, y: 50 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         transition={{ duration: 0.8, delay: 0.2 }}
-//         viewport={{ once: true }}
-//       >
-//         <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-//          Get  <span style={{ color: "#FF9178" }}>  Help & Support</span>
-//         </h2>
-
-//         <p className="mt-5 text-lg leading-8 opacity-90 max-w-3xl mx-auto">
-//          If something didn't go as expected, we're here to help. Tranga Pods
-//               are automated systems, but real people handle support.
-//         </p>
-
-       
-//       </motion.div>
-//           </div>
-
-//           {/* MACHINE ISSUES CARD */}
-//           <motion.div
-//             variants={itemVariants}
-//             className="bg-[#1B1A3A] rounded-2xl p-8 border border-white/10"
-//           >
-//             <div className="flex items-center gap-3 mb-6">
-//               <AlertCircle className="text-[#FF9178]" size={24} />
-//               <h3 className="text-2xl font-light">
-//                 Issues with a Tranga Pod?
-//               </h3>
-//             </div>
-
-//             <p className="mb-4 opacity-90">
-//               Tranga Pods operate as self-service machines. Occasionally, issues
-//               can happen such as a product not dispensing correctly or a payment
-//               error.
-//             </p>
-
-//             <p className="mb-8 opacity-90">
-//               Refunds and issue reviews are handled using the transaction data
-//               from the machine.
-//             </p>
-
-//             <div className="space-y-5 mb-8">
-//               {[
-//                 {
-//                   number: "1",
-//                   title: "Note the pod location",
-//                   description: "Venue name or city/state",
-//                 },
-//                 {
-//                   number: "2",
-//                   title: "Keep your payment details",
-//                   description: "Transaction time or card reference",
-//                 },
-//                 {
-//                   number: "3",
-//                   title: "Contact support",
-//                   description: "Include all info for faster help",
-//                 },
-//               ].map((step) => (
-//                 <div key={step.number} className="flex items-start gap-4">
-//                   <div className="w-8 h-8 bg-[#FF9178] rounded-full flex items-center justify-center">
-//                     <span className="text-[#14132C] font-medium">
-//                       {step.number}
-//                     </span>
-//                   </div>
-
-//                   <div>
-//                     <h4 className="font-medium">{step.title}</h4>
-//                     <p className="text-sm opacity-80">
-//                       {step.description}
-//                     </p>
-//                   </div>
-//                 </div>
-//               ))}
-//             </div>
-
-//             <div className="bg-[#FF9178]/20 border border-[#FF9178]/30 rounded-xl p-4">
-//               <p className="text-[#FF9178] flex items-center gap-2">
-//                 <AlertCircle size={18} />
-//                 Important: Refunds are handled per machine transaction only.
-//               </p>
-//             </div>
-//           </motion.div>
-
-//           {/* CONTACT CARD */}
-//           <motion.div
-//             variants={itemVariants}
-//             className="bg-[#0F172A] rounded-2xl p-8 border border-white/10"
-//           >
-//             <div className="flex items-center gap-3 mb-6">
-//               <Mail className="text-[#A6D4FA]" size={24} />
-//               <h3 className="text-2xl font-light">
-//                 Contact Tranga Support
-//               </h3>
-//             </div>
-
-//             <div className="flex gap-6 items-center">
-//               <div className="w-14 h-14 bg-[#A6D4FA] rounded-full flex items-center justify-center">
-//                 <Mail className="text-[#14132C]" size={24} />
-//               </div>
-
-//               <div>
-//                 <h4 className="text-lg font-medium mb-1">Email Support</h4>
-//                 <a
-//                   href="mailto:support@trangapods.com"
-//                   className="text-[#A6D4FA] text-md md:text-xl block"
-//                 >
-//                   support@trangapods.com
-//                 </a>
-//                 <p className="opacity-80 mt-2">
-//                   Email allows accurate transaction review.
-//                 </p>
-//               </div>
-//             </div>
-//           </motion.div>
-//         </motion.div>
-//       </section>
-
-//       {/* ================= FAQ (NO CURSOR EFFECT) ================= */}
-//       <section className="py-20 bg-[#EFF7FE] text-gray-900">
-//         <div className="max-w-4xl mx-auto px-4 space-y-10">
-//           <h3 className="text-2xl font-light">Common Questions</h3>
-
-//           <div className="space-y-3">
-//             {faqs.map((faq, index) => (
-//               <div
-//                 key={index}
-//                 className="rounded-xl bg-white border border-gray-200 shadow-sm"
-//               >
-//                 <button
-//                   onClick={() =>
-//                     setOpenFaq(openFaq === index ? null : index)
-//                   }
-//                   className="w-full px-6 py-4 flex justify-between items-center text-left"
-//                 >
-//                   <span className="font-medium">{faq.question}</span>
-//                   {openFaq === index ? <ChevronUp /> : <ChevronDown />}
-//                 </button>
-
-//                 {openFaq === index && (
-//                   <div className="px-6 py-4 border-t border-gray-200">
-//                     <p className="text-gray-700">{faq.answer}</p>
-//                   </div>
-//                 )}
-//               </div>
-//             ))}
-//           </div>
-
-//           <div className="flex justify-center">
-//             <div className="rounded-2xl bg-white border border-gray-200 shadow-md p-6 text-center">
-//               <div className="flex items-center gap-3 justify-center mb-4">
-//                 <Info className="text-blue-600" size={22} />
-//                 <h4 className="text-lg font-semibold">
-//                   Machine Information
-//                 </h4>
-//               </div>
-
-//               <p className="text-gray-800 mb-2">
-//                 All Tranga Pods are monitored and serviced regularly.
-//               </p>
-//               <p className="text-sm text-gray-600">
-//                 If one appears offline, please try another nearby location.
-//               </p>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// };
-
-// export default HelpRefunds;
-
 // components/sections/HelpRefunds.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -276,7 +6,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { Link as ScrollLink } from "react-scroll";
-
+import { Link } from "react-scroll";
 const HelpRefunds = () => {
   /* ================= FAQ STATE ================= */
   const [openIndex, setOpenIndex] = useState(null);
@@ -351,32 +81,32 @@ const HelpRefunds = () => {
 
   /* ================= FAQ DATA ================= */
   const faqsData = [
-    {
-      question: "I was charged but didn't receive my product",
-      answer:
-        "Please contact support with the pod location and transaction details. We'll review the machine logs and process a refund if applicable.",
-    },
-    {
-      question: "I received the wrong item",
-      answer:
-        "This can happen if a product mis-dispenses. Contact our team with transaction details and we'll review the issue immediately.",
-    },
-    {
-      question: "Can I return a product?",
-      answer:
-        "Due to hygiene and safety standards, physical returns are not accepted. Refunds are handled case by case based on transaction verification.",
-    },
-    {
-      question: "How do I know if my refund was approved?",
-      answer:
-        "Our team will notify you by email once the review is complete. Refunds typically appear in your account within 3–5 business days.",
-    },
-    {
-      question: "The machine appears offline or isn't working",
-      answer:
-        "Please try another nearby location. All pods are monitored and serviced regularly.",
-    },
-  ];
+  {
+    question: "Why didn’t my pod dispense?",
+    answer:
+      "This can occur due to a mechanical jam or temporary error. If this happens, the transaction is automatically logged by the machine.",
+  },
+  {
+    question: "I was charged but didn’t receive a product — what should I do?",
+    answer:
+      "Contact support with the pod location and approximate transaction time so we can review the machine logs.",
+  },
+  {
+    question: "When will my refund be processed?",
+    answer:
+      "Eligible refunds are typically reviewed within 3–5 business days.",
+  },
+  {
+    question: "What details do I need to send?",
+    answer:
+      "Please include the pod location (venue or city), the approximate transaction time, and your payment method or card reference.",
+  },
+  {
+    question: "Can I return a product?",
+    answer:
+      "No. Due to hygiene and safety standards, physical returns are not accepted. Refunds are handled case by case.",
+  },
+];
 
   return (
     <div className="w-full">
@@ -402,9 +132,12 @@ const HelpRefunds = () => {
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
               Get <span className="text-[#FF9178]">Help & Support</span>
             </h2>
-            <p className="text-lg opacity-90">
-              Automated systems — backed by real human support.
-            </p>
+           <p className="text-lg opacity-90">
+  If something didn’t go as expected, we’re here to help.
+  <br />
+  Automated systems — backed by real human support.
+</p>
+
           </div>
 
           {/* ================= STEPS ================= */}
@@ -483,6 +216,14 @@ const HelpRefunds = () => {
                   <p className="text-sm opacity-80">Include all details</p>
                 </div>
               </div>
+              <div className="bg-[#1B1A3A] rounded-xl p-6 border border-white/10">
+  <p className="text-sm opacity-90">
+    <strong>Important:</strong> All purchases are made directly at Tranga Pods.
+    There are no online orders. Refunds are reviewed using machine transaction
+    data.
+  </p>
+</div>
+
             </div>
           </div>
 
@@ -495,12 +236,16 @@ const HelpRefunds = () => {
             >
               support@trangapods.com
             </a>
+            <p className="text-sm opacity-80 mt-2">
+  Email allows us to review transaction details and respond accurately.
+</p>
+
           </div>
         </div>
       </section>
 
       {/* ================= FAQ SECTION (YOUR LAYOUT) ================= */}
-      <section id="faq" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+      <section id="faq" className="py-16 bg-[#DDDCFF] sm:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
             className="text-center"
@@ -591,6 +336,21 @@ const HelpRefunds = () => {
               </div>
             );
           })()}
+import { Link } from "react-scroll";
+
+<p className="mt-8 text-center" style={{ color: '#14132C' }}>
+  Still have questions?{" "}
+  <Link
+    to="support"
+    smooth
+    duration={500}
+    offset={-80}
+    className="cursor-pointer hover:underline  font-bold text-[#FE9E78] transition-colors"
+  >
+    Contact us anytime
+  </Link>
+  {" "}— we’ll guide you through setup, revenue projections, and everything in between.
+</p>
 
           
         </div>

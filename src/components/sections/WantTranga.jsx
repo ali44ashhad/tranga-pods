@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const WantTranga = () => {
   return (
-    <div id="find-one" className="py-16 px-6 md:px-12 lg:px-24 bg-white">
+    <div id="find-one" className="py-16 px-6 md:px-12 lg:px-24 bg-gradient-to-r from-[#E9F5FF] via-[#FFF2EE]  to-[#E9F5FF]">
        <motion.div 
           initial={{ y: 40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -12,11 +12,15 @@ const WantTranga = () => {
           className="max-w-2xl mx-auto"
         >
           <div className="bg-gradient-to-br from-[#A6D4FA]/20 to-[#FF9178]/10 rounded-2xl p-8 border border-[#A6D4FA]/30">
-            <h3 className="text-2xl font-light mb-4 text-[#14132C]">Want a Tranga Pod Near You?</h3>
-            <p className="text-[#14132C]/80 mb-6">
-              Tell us where you'd like to see a Tranga Pod next. Your suggestions help us choose future locations across the U.S.
-            </p>
             
+            <div className="text-center py-6">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+             Want a <span className="text-[#FF9178]"> Tranga Pod Near You?</span>
+            </h2>
+            <p className=" opacity-90">
+               Tell us where you'd like to see a Tranga Pod next. Your suggestions help us choose future locations across the U.S.
+            </p>
+          </div>
             <form className="space-y-4">
               <div>
                 <input
