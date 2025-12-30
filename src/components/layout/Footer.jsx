@@ -65,13 +65,13 @@ const Footer = () => {
               </div>
 
               <div className="flex flex-col gap-3">
+                <Link to="find-one" smooth duration={500} offset={-80}
+                  className="cursor-pointer hover:text-white transition-colors">
+              Can`t Find one
+                </Link>
                 <Link to="support" smooth duration={500} offset={-80}
                   className="cursor-pointer hover:text-white transition-colors">
-                  Support & Refunds
-                </Link>
-                <Link to="faq" smooth duration={500} offset={-80}
-                  className="cursor-pointer hover:text-white transition-colors">
-                  FAQ`s`
+               Refunds & FAQs
                 </Link>
               </div>
             </div>

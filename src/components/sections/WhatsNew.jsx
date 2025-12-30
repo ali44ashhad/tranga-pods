@@ -105,55 +105,52 @@ const WhatsNew = () => {
           Latest launches, real stories, and what’s trending inside Tranga Pods.
         </motion.p>
 
-        {/* Instagram Carousel */}
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-          <Swiper
-            modules={[Navigation, Autoplay]}
-            spaceBetween={20}
-            slidesPerView={1.2}
-            centeredSlides
-            breakpoints={{
-              640: { slidesPerView: 1.5 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 2.5 },
-            }}
-            autoplay={{ delay: 5000, disableOnInteraction: false }}
-            navigation
-            loop
-            className="!pb-12"
-          >
-            {instagramPosts.map((post) => (
-              <SwiperSlide key={post.id}>
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-lg">
-                  <img
-                    src={post.image}
-                    alt={post.caption}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+     <Swiper
+  modules={[Autoplay]}
+  spaceBetween={24}
+  slidesPerView={1.2}
+  loop
+  freeMode={true}
+  freeModeMomentum={false}
+  allowTouchMove={false} // 🔥 marquee feel
+  speed={10000}          // 🔥 higher = smoother
+  autoplay={{
+    delay: 0,
+    disableOnInteraction: false,
+  }}
+  breakpoints={{
+    640: { slidesPerView: 1.5 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 2.5 },
+  }}
+  className="instagram-marquee !pb-12"
+>
+  {instagramPosts.map((post) => (
+    <SwiperSlide key={post.id}>
+      <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-lg">
+        <img
+          src={post.image}
+          alt={post.caption}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
 
-                  <div className="absolute inset-0 flex items-end justify-center p-6">
-                    <div className="text-center">
-                      <div className="w-12 h-12 rounded-full bg-[#FF9178] mx-auto mb-3 flex items-center justify-center">
-                        <span className="text-xl">✨</span>
-                      </div>
-                      <p className="text-base font-medium text-white">
-                        {post.caption}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </motion.div>
+        <div className="absolute inset-0 flex items-end justify-center p-6">
+          <div className="text-center">
+            <div className="w-12 h-12 rounded-full bg-[#FF9178] mx-auto mb-3 flex items-center justify-center">
+              <span className="text-xl">✨</span>
+            </div>
+            <p className="text-base font-medium text-white">
+              {post.caption}
+            </p>
+          </div>
+        </div>
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
+
 
         {/* Reviews Marquee */}
        
@@ -195,23 +192,29 @@ const WhatsNew = () => {
         ))}
       </div>
     </motion.div>
-         <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <a
-            href="https://instagram.com/TrangaPods"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#14132C] text-white hover:bg-[#14132C]/90 transition-all"
-          >
-            <Instagram size={20} />
-            <span>Follow us @TrangaPods</span>
-          </a>
-        </motion.div>
+        <motion.div
+  initial={{ y: 20, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{
+    type: "spring",
+    stiffness: 120,
+    damping: 18,
+    mass: 0.6,
+  }}
+  className="text-center"
+>
+  <a
+    href="https://instagram.com/TrangaPods"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#14132C] text-white hover:bg-[#14132C]/90 transition-all"
+  >
+    <Instagram size={20} />
+    <span>Follow us @TrangaPods</span>
+  </a>
+</motion.div>
+
+
     </motion.section>
   );
 };

@@ -22,8 +22,8 @@ const Header = () => {
     { label: "What's New", href: "whats-new" },
     { label: "Why Tranga ", href: "about" },
     { label: "Find a Pod", href: "find-pod" },
-    { label: "Support", href: "support" },
-    { label: "FAQ", href: "FAQ" },
+    { label: "Can`t Find one", href: "find-one" },
+    { label: "Refunds & FAQs", href: "support" }, 
   ];
 
   return (

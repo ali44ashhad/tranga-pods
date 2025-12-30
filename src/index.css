@@ -160,3 +160,6 @@
 .smooth-scroll {
   scroll-behavior: smooth;
 }
+.instagram-marquee .swiper-wrapper {
+  transition-timing-function: linear !important;
+}

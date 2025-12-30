@@ -6,6 +6,7 @@ import WhatsNew from '../components/sections/WhatsNew';
 import AboutTranga from '../components/sections/AboutTranga';
 import FindPod from '../components/sections/FindPod';
 import HelpRefunds from '../components/sections/HelpRefunds';
+import WantTranga from '../components/sections/WantTranga';
  
 
 export default function Home() {
@@ -35,6 +36,7 @@ export default function Home() {
         <WhatsNew />
         <AboutTranga />
         <FindPod />
+        <WantTranga/>
         <HelpRefunds />
 {/* 
          <PageIntro />         
