@@ -68,25 +68,24 @@ const FindPod = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="py-20 bg-gradient-to-b from-[#A6D4FA]/20 to-white"
+      className="py-20 bg-[#A6D4FA]"
     >
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl text-center mx-auto px-4">
         {/* Section Header */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl md:text-5xl font-light mb-4 text-[#14132C]">
-            Find a Tranga Pod
-          </h2>
-          <p className="text-lg text-[#14132C]/80 max-w-2xl mx-auto">
-            Tranga Pods are placed in trusted, community-loved venues so you can access what you need, when you need it.
-          </p>
-        </motion.div>
-
+        
+ <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight" style={{ color: '#14132C' }}>
+                            Find a <span style={{ color: '#FF9178' }}>Tranga Pod.</span>
+                        </h2>
+                        <p className="mt-6 text-xl max-w-4xl mx-auto leading-relaxed" style={{ color: '#14132C' }}>
+                              Tranga Pods are placed in trusted, community-loved venues so you can access what you need, when you need it.
+                        </p>
+                    </motion.div>
         {/* Use-case Framing */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
@@ -118,7 +117,7 @@ const FindPod = () => {
                 placeholder="Enter ZIP code"
                 value={zipCode}
                 onChange={(e) => setZipCode(e.target.value.replace(/\D/g, ''))}
-                className="w-full pl-12 pr-4 py-4 rounded-full border-2 border-[#A6D4FA] focus:border-[#FF9178] focus:ring-2 focus:ring-[#FF9178]/20 outline-none transition-all"
+                className="w-full pl-12 pr-4 py-4 rounded-full border-2 border-[#FF9178] focus:border-[#FF9178] focus:ring-2 focus:ring-[#FF9178]/20 outline-none transition-all"
               />
             </div>
             <motion.button
