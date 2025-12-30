@@ -163,3 +163,22 @@
 .instagram-marquee .swiper-wrapper {
   transition-timing-function: linear !important;
 }
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* 🔥 Mobile fast */
+@media (max-width: 640px) {
+  .animate-marquee {
+    animation-duration: 14s;
+  }
+}

@@ -151,11 +151,7 @@ const WhatsNew = () => {
   ))}
 </Swiper>
 
-
-        {/* Reviews Marquee */}
-       
-
-        {/* Instagram CTA */}
+ 
        
       </div>
         <motion.div
