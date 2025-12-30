@@ -335,8 +335,7 @@ const HelpRefunds = () => {
                 ))}
               </div>
             );
-          })()}
-import { Link } from "react-scroll";
+          })()} 
 
 <p className="mt-8 text-center" style={{ color: '#14132C' }}>
   Still have questions?{" "}
