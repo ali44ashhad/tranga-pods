@@ -20,11 +20,12 @@ const Header = () => {
   // Content UNCHANGED
   const navItems = [
     { label: "What's New", href: "whats-new" },
-    { label: "Why Tranga ", href: "about" },
-    { label: "Find a Pod", href: "find-pod" },
-    { label: "Can`t Find one", href: "find-one" },
-    { label: "Refunds & FAQs", href: "support" }, 
+    { label: "How It Works ", href: "about" },
+    { label: "Locations", href: "find-pod" },
+    { label: "Request a Location", href: "find-one" },
+    { label: "Support", href: "support" }, 
   ];
+
 
   return (
     <motion.header

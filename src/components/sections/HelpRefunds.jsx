@@ -79,32 +79,54 @@ const HelpRefunds = () => {
     };
   }, []);
 
-  /* ================= FAQ DATA ================= */
+
   const faqsData = [
   {
-    question: "Why didn’t my pod dispense?",
+    question: "What if my payment went through but nothing dispensed?",
     answer:
-      "This can occur due to a mechanical jam or temporary error. If this happens, the transaction is automatically logged by the machine.",
+      "If a product fails to dispense after payment, you may be eligible for a refund. Simply follow our refund request process and include the location and approximate time of your purchase so we can investigate and resolve it quickly.",
   },
   {
-    question: "I was charged but didn’t receive a product — what should I do?",
+    question: "How long do refunds take?",
     answer:
-      "Contact support with the pod location and approximate transaction time so we can review the machine logs.",
+      "Once approved, refunds are typically processed within 5–10 business days, depending on your bank or payment provider.",
+  },
+ {
+  question: "What information do I need to submit a refund request?",
+  answer: {
+    text: "To help us resolve your request efficiently, we may ask for:",
+    points: [
+      "The Tranga Pod location",
+      "Approximate date and time of purchase",
+      "Transaction or payment reference",
+      "A photo of the issue, if applicable",
+    ],
+  },
+},
+  {
+    question: "Do I need a receipt",
+    answer:
+      "Receipts are not required. Providing accurate purchase details helps us locate and verify your transaction faster.",
   },
   {
-    question: "When will my refund be processed?",
+    question: "What if I’m not sure which Tranga Pod I used?",
     answer:
-      "Eligible refunds are typically reviewed within 3–5 business days.",
+      "No problem. If you include the venue name and approximate time of purchase, we’ll do our best to locate the transaction.",
   },
   {
-    question: "What details do I need to send?",
+    question: "Are all purchases refundable?",
     answer:
-      "Please include the pod location (venue or city), the approximate transaction time, and your payment method or card reference.",
+      "No problem. If you include the venue name and approximate time of purchase, we’ll do our best to locate the transaction.",
   },
   {
-    question: "Can I return a product?",
+    question: "How long do refunds take?",
     answer:
-      "No. Due to hygiene and safety standards, physical returns are not accepted. Refunds are handled case by case.",
+      "Once approved, refunds are typically processed within 5–10 business days, depending on your bank or card provider.",
+  },
+  {
+    question: "Can I get a refund at the venue where the Tranga Pod is located?",
+    answer:
+      "Refunds are handled directly by Tranga, not the venue. Venue staff are unable to issue refunds or access pod transactions.",
   },
 ];
 
@@ -130,12 +152,11 @@ const HelpRefunds = () => {
         <div className="relative max-w-4xl mx-auto px-4 space-y-16">
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              Get <span className="text-[#FF9178]">Help & Support</span>
+              Get Help<span className="text-[#FF9178]"> & Refunds</span>
             </h2>
            <p className="text-lg opacity-90">
-  If something didn’t go as expected, we’re here to help.
-  <br />
-  Automated systems — backed by real human support.
+ Quick answers, clear next steps, and support when you need it.
+   
 </p>
 
           </div>
@@ -192,8 +213,10 @@ const HelpRefunds = () => {
                   <span className="text-[#14132C] font-medium">1</span>
                 </div>
                 <div>
-                  <h4 className="font-medium">Note the pod location</h4>
-                  <p className="text-sm opacity-80">Venue or city/state</p>
+                  <h4 className="font-medium">Capture the Issue</h4>
+                  <p className="text-sm opacity-80">Take a clear photo or short video of the product and the Tranga Pod screen.
+Note the location, date, and approximate time of purchase.
+</p>
                 </div>
               </div>
 
@@ -202,8 +225,9 @@ const HelpRefunds = () => {
                   <span className="text-[#14132C] font-medium">2</span>
                 </div>
                 <div>
-                  <h4 className="font-medium">Keep payment details</h4>
-                  <p className="text-sm opacity-80">Time or card reference</p>
+                  <h4 className="font-medium">Submit a Refund Request</h4>
+                  <p className="text-sm opacity-80">Complete our quick refund form with your details and transaction info.
+No accounts, no back-and-forth.</p>
                 </div>
               </div>
 
@@ -212,8 +236,9 @@ const HelpRefunds = () => {
                   <span className="text-[#14132C] font-medium">3</span>
                 </div>
                 <div>
-                  <h4 className="font-medium">Contact support</h4>
-                  <p className="text-sm opacity-80">Include all details</p>
+                  <h4 className="font-medium"> We Review & Resolve</h4>
+                  <p className="text-sm opacity-80">Approved refunds are processed within 3–5 business days back to your original payment method.
+</p>
                 </div>
               </div>
               <div className="bg-[#1B1A3A] rounded-xl p-6 border border-white/10">
@@ -242,6 +267,66 @@ const HelpRefunds = () => {
 
           </div>
         </div>
+        <motion.div
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.6, duration: 0.8 }}
+                  className="flex flex-col sm:flex-row gap-4 justify-center pt-18"
+                >
+        
+                  {/* Nearby Pods */}
+                  <ScrollLink
+                    to=""
+                    smooth={true}
+                    duration={600}
+                    offset={-80}
+                  >
+                    <motion.button
+                      whileHover={{
+                        scale: 1.05,
+                        backgroundColor: "#FFFD3A",
+                        boxShadow: "0 10px 25px rgba(255,253,58,0.35)"
+                      }}
+                      whileTap={{ scale: 0.97 }}
+                      transition={{ duration: 0.18 }}
+                      className="px-8 py-3 rounded-full font-semibold text-lg w-full sm:w-auto"
+                      style={{
+                        backgroundColor: "#FF9178",
+                        color: "#14132C"
+                      }}
+                    >
+                      Contact Support
+                    </motion.button>
+                  </ScrollLink>
+        
+                  {/* Get Support */}
+                  <ScrollLink
+                    to=""
+                    smooth={true}
+                    duration={600}
+                    offset={-80}
+                  >
+                    <motion.button
+                      whileHover={{
+                        scale: 1.05,
+                        backgroundColor: "#FFFFFF",
+                        color: " #14132C",
+                        boxShadow: "0 8px 20px rgba(20,19,44,0.25)"
+                      }}
+                      whileTap={{ scale: 0.97 }}
+                      transition={{ duration: 0.18 }}
+                      className="px-8 py-3 rounded-full font-semibold text-lg w-full sm:w-auto border-2"
+                      style={{
+                        backgroundColor: "transparent",
+                        color: "#FFFFFF",
+                        borderColor: "#FFFFFF"
+                      }}
+                    >
+                 View full refund policy
+                    </motion.button>
+                  </ScrollLink>
+        
+                </motion.div>
       </section>
 
       {/* ================= FAQ SECTION (YOUR LAYOUT) ================= */}
@@ -319,12 +404,15 @@ const HelpRefunds = () => {
                                 exit={{ opacity: 0, height: 0 }}
                                 className="overflow-hidden"
                               >
-                                <p
-                                  className="pr-8 pt-4"
-                                  style={{ color: "#14132C" }}
-                                >
-                                  {faq.answer}
-                                </p>
+                               <div className="pr-8 pt-4 text-[#14132C] space-y-2">
+  <p>{faq.answer.text}</p>
+  <ul className="list-disc pl-5 space-y-1">
+    {faq.answer.points.map((point, i) => (
+      <li key={i}>{point}</li>
+    ))}
+  </ul>
+</div>
+
                               </motion.div>
                             )}
                           </AnimatePresence>
@@ -354,6 +442,7 @@ const HelpRefunds = () => {
           
         </div>
       </section>
+     
     </div>
   );
 };

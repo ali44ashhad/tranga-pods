@@ -7,6 +7,7 @@ import AboutTranga from '../components/sections/AboutTranga';
 import FindPod from '../components/sections/FindPod';
 import HelpRefunds from '../components/sections/HelpRefunds';
 import WantTranga from '../components/sections/WantTranga';
+import FirstSection from '../components/sections/FirstSection';
  
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
       <Header />
       
       <main>
+        <FirstSection/>
         <WhatsNew />
         <AboutTranga />
         <FindPod />

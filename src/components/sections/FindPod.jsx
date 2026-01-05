@@ -6,7 +6,42 @@ import { Link } from 'react-scroll';
 
 const FindPod = () => {
   const navigate = useNavigate();
+  const testimonialGradients = [
+  "from-[#FF9178] via-[#FF9178] to-[#FF9178]",
+  "from-[#ffffff] via-[#ffffff] to-[#ffffff]",
+  "from-[#FFFD3A] via-[#FFFD3A] to-[#FFFD3A]",
+  "from-[#DB2A2A] via-[#DB2A2A] to-[#DB2A2A]",
+  "from-[#ffffff] via-[#ffffff] to-[#ffffff]",
+  "from-[#FFFD3A] via-[#FFFD3A] to-[#FFFD3A]",
+];
 
+ const reviews = [
+    {
+      text: "Super easy to use and smells incredible.",
+      location: "Gym Member, Atlanta",
+      avatar: "https://randomuser.me/api/portraits/women/45.jpg",
+    },
+    {
+      text: "Found exactly what I needed after hours.",
+      location: "Traveler, Miami",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    },
+    {
+      text: "Game changer for late night needs.",
+      location: "Hotel Guest, Austin",
+      avatar: "https://randomuser.me/api/portraits/men/76.jpg",
+    },
+    {
+      text: "Simple, fast, and premium quality.",
+      location: "Student, NYC",
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    {
+      text: "Love the convenience at my gym!",
+      location: "Fitness Member, LA",
+      avatar: "https://randomuser.me/api/portraits/men/54.jpg",
+    },
+  ];
   const [zipCode, setZipCode] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [showNoResults, setShowNoResults] = useState(false);
@@ -201,9 +236,45 @@ const FindPod = () => {
                 ))}
               </div>
             </div>
+            
           )}
         </div>
+         
       </div>
+      <motion.div
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, delay: 0.4 }}
+      viewport={{ once: true }}
+      className="overflow-hidden mb-12"
+    >
+      <div className="flex animate-marquee gap-6 whitespace-nowrap pt-16">
+        {[...reviews, ...reviews].map((review, idx) => (
+          <div
+  className={`
+    inline-flex items-center gap-4
+    px-6 py-3 rounded-full
+    bg-gradient-to-r ${testimonialGradients[idx % testimonialGradients.length]}
+    shadow-md border border-white/40
+    w-max
+    shrink-0
+  `}
+>
+
+            <img
+              src={review.avatar}
+              alt={review.location}
+              className="w-10 h-10 rounded-full object-cover border border-white shrink-0"
+            />
+
+            <p className="text-sm md:text-base text-[#14132C]/80 leading-snug whitespace-nowrap">
+              {review.text} —{" "}
+              <span className="opacity-70">{review.location}</span>
+            </p>
+          </div>
+        ))}
+      </div>
+    </motion.div>
     </motion.section>
   );
 };
