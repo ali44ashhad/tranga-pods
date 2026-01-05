@@ -271,7 +271,7 @@ No accounts, no back-and-forth.</p>
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.6, duration: 0.8 }}
-                  className="flex flex-col sm:flex-row gap-4 justify-center pt-18"
+                  className="flex flex-col sm:flex-row gap-4 px-4 justify-center pt-18"
                 >
         
                   {/* Nearby Pods */}

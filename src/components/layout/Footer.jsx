@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="bg-slate-900 text-gray-300">
        <section
         id="support-details"
-        className=" text-white border-b border-gray-100/20 text-xs px-4 sm:px-6 lg:px-8 py-16"
+        className=" text-gray-400 border-b border-gray-100/20 text-xs px-4 sm:px-6 lg:px-8 py-16"
       >
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto space-y-6 leading-relaxed">
           <p className="font-semibold">
