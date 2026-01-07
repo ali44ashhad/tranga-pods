@@ -1,15 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { Instagram, Mail } from "lucide-react";
 
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    const { left, top } = e.currentTarget.getBoundingClientRect();
+    setCursorPos({ x: e.clientX - left, y: e.clientY - top });
+  };
+
   return (
-    <footer className="bg-slate-900 text-gray-300">
+    <footer 
+      className="bg-[#0F172A] text-gray-300 relative overflow-hidden"
+      onMouseMove={handleMouseMove}
+    >
+      {/* Glow effect following cursor */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `radial-gradient(
+            320px circle at ${cursorPos.x}px ${cursorPos.y}px,
+            rgba(255,145,120,0.18),
+            transparent 75%
+          )`,
+        }}
+      />
        <section
         id="support-details"
-        className=" text-gray-400 border-b border-gray-100/20 text-xs px-4 sm:px-6 lg:px-8 py-16"
+        className="relative z-10 text-gray-400 border-b border-gray-100/20 text-xs px-4 sm:px-6 lg:px-8 py-16"
       >
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto space-y-6 leading-relaxed">
           <p className="font-semibold">
@@ -81,7 +102,7 @@ Requests missing required information may be delayed or declined.
           </p>
         </div>
       </section>
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
 
           {/* LEFT: Brand + Social */}

@@ -136,7 +136,7 @@ const HelpRefunds = () => {
       <section
         id="support"
         onMouseMove={handleMouseMove}
-        className="relative overflow-hidden py-24 bg-[#14132C] text-white"
+        className="relative overflow-hidden py-24 bg-[#A6D4FA] text-white"
       >
         <motion.div
           className="absolute inset-0 pointer-events-none"
@@ -404,15 +404,20 @@ No accounts, no back-and-forth.</p>
                                 exit={{ opacity: 0, height: 0 }}
                                 className="overflow-hidden"
                               >
-                               <div className="pr-8 pt-4 text-[#14132C] space-y-2">
-  <p>{faq.answer.text}</p>
-  <ul className="list-disc pl-5 space-y-1">
-    {faq.answer.points.map((point, i) => (
-      <li key={i}>{point}</li>
-    ))}
-  </ul>
-</div>
-
+                                <div className="pr-8 pt-4 text-[#14132C] space-y-2">
+                                  {typeof faq.answer === "string" ? (
+                                    <p>{faq.answer}</p>
+                                  ) : (
+                                    <>
+                                      <p>{faq.answer.text}</p>
+                                      <ul className="list-disc pl-5 space-y-1">
+                                        {faq.answer.points.map((point, i) => (
+                                          <li key={i}>{point}</li>
+                                        ))}
+                                      </ul>
+                                    </>
+                                  )}
+                                </div>
                               </motion.div>
                             )}
                           </AnimatePresence>
@@ -424,20 +429,18 @@ No accounts, no back-and-forth.</p>
               </div>
             );
           })()} 
-
-<p className="mt-8 text-center" style={{ color: '#14132C' }}>
+<p className="mt-8 text-center" style={{ color: "#14132C" }}>
   Still have questions?{" "}
-  <Link
-    to="support"
-    smooth
-    duration={500}
-    offset={-80}
-    className="cursor-pointer hover:underline  font-bold text-[#FE9E78] transition-colors"
+  <a
+    href="mailto:support@trangapods.com"
+    className="cursor-pointer hover:underline font-bold text-[#FE9E78] transition-colors"
   >
     Contact us anytime
-  </Link>
-  {" "}— we’ll guide you through setup, revenue projections, and everything in between.
+  </a>
+  {" "}for help with using the machine, refunds, purchase-related issues, or any general customer support.
 </p>
+
+
 
           
         </div>

@@ -15,7 +15,7 @@ const AboutTranga = () => {
     },
     {
       icon: <MonitorSmartphone className="w-8 h-8" />,
-      title: "Choose Your Pod iconography",
+      title: "Choose Your Pod",
       description:
         "Pick the pod and product you want everything is simple and fast.",
       bg: "bg-[#A6D4FA]"
