@@ -58,7 +58,7 @@ const FirstSection = () => {
               }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.18 }}
-              className="px-8 py-3 rounded-full font-semibold text-lg w-full sm:w-auto"
+              className="font-semibold py-3 px-8 rounded-full shadow-md inline-block text-center w-full text-xl md:text-2xl h-full"
               style={{
                 backgroundColor: "#FF9178",
                 color: "#14132C"
@@ -84,7 +84,7 @@ const FirstSection = () => {
               }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.18 }}
-              className="px-8 py-3 rounded-full font-semibold text-lg w-full sm:w-auto border-2"
+              className="font-semibold py-3 px-8 rounded-full border-2 inline-block text-center w-full text-xl md:text-2xl h-full"
               style={{
                 backgroundColor: "transparent",
                 color: "#14132C",
@@ -96,6 +96,24 @@ const FirstSection = () => {
           </ScrollLink>
 
         </motion.div>
+         <p className="text-lg font-semibold" style={{ color: '#14132C' }}>
+               Built for customers, wherever you are.
+              </p>
+          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-6 h-10 border-2 rounded-full flex justify-center"
+                  style={{ borderColor: '#14132C' }}
+                >
+                  <motion.div
+                    animate={{ y: [0, 12, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    className="w-1 h-3 rounded-full mt-2"
+                    style={{ backgroundColor: '#14132C' }}
+                  />
+                </motion.div>
+              </div>
       </div>
     </motion.section>
   );
